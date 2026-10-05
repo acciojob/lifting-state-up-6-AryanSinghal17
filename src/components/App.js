@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [completed, setCompleted] = useState([false, false, false]);
+  const [todos, setCompleted] = useState([false, false, false]);
 
   const handleComplete = (index) => {
-    const newCompleted = [...completed];
+    const newCompleted = [...todos];
     newCompleted[index] = true;
     setCompleted(newCompleted);
   };
@@ -19,7 +19,7 @@ const App = () => {
         <ul>
           <li>
             Learn React
-            {!completed[0] && (
+            {!todos[0] && (
               <button onClick={() => handleComplete(0)}>
                 Complete
               </button>
@@ -28,7 +28,7 @@ const App = () => {
 
           <li>
             Build a React App
-            {!completed[1] && (
+            {!todos[1] && (
               <button onClick={() => handleComplete(1)}>
                 Complete
               </button>
@@ -37,7 +37,7 @@ const App = () => {
 
           <li>
             Deploy the React App
-            {!completed[2] && (
+            {!todos[2] && (
               <button onClick={() => handleComplete(2)}>
                 Complete
               </button>
